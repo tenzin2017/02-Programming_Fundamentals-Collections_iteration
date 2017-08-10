@@ -1,7 +1,7 @@
 # list of different arrays of question 1
 
 favourate_colours = ["red", "green", "yellow", "blue", "white"]
-age_of_me_my_sib_friends = [ 31, 40, 32]
+age_of_my_family = [ 31, 40, 32]
 flipped_coin_result = ["head", "tail", "head", "head", "tail"]
 three_fav_artists = ["Richard Gere", "Tom Cruse", "Amir Khan"]
 favourate_colours_symbols = [:green, :blue, :white]
