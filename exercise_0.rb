@@ -109,35 +109,38 @@ phone_keypad = [[1,2,3], [4,5,6], [7,8,9], ["*", 0, "#"]]
 end
 
 #array with repeating msg
- puts message_repeat = ["I will not skateboard in the halls"]*20
+ new_arr_msg = []
+ string = "I will not skateboard in the halls"
+ 20.times { new_arr_msg << string}
+ puts new_arr_msg.inspect
 
 
 #array of no from 1 to 50
 num_arr =[*1..50]
 
-puts num_arr
+puts num_arr.inspect
 
-#each loop to find sum
+# #each loop to find sum
 sum = 0
 num_arr.each do |num|
   sum = sum + num
 end
 puts sum
 
-#array with three of each
-new_arr = []
-num_arr.map do |num|
-  puts new_arr = [[num]*3]
+# #array with three of each
+new_arr = num_arr.flat_map do |num| [num]*3
 end
+puts new_arr.inspect
 
-#array of contries that are not island from ex-6a
-country_list_not_island = []
-country_list.each do |v|
-  if v.has_value?("No")
-   puts country_list_not_island = [v]
+
+# #array of contries that are not island from ex-6a
+country_list_noisland = []
+country_list.each do |country|
+  if country["island"] == "No"
+     country_list_noisland << country
   end
 end
-
+puts country_list_noisland.inspect
 
 #Exercise-7
 #annual expenses approximation
@@ -148,3 +151,50 @@ expenses.each do |exp|
   total_expenses = total_expenses + exp
 end
 puts "total expenses in a year is $ #{total_expenses}"
+
+# defining method to find total expenses
+def total_exp(expenses)
+     total = 0
+     expenses.each do |price|
+      total = total + price
+     end
+     return total
+end
+
+#Exercise-8
+grocery_list = ["carrots", "toilet paper", "apples", "salmon"]
+grocery_list << "rice"
+
+def arr_grocery(grocery_list)
+  grocery_list.map! do |item|
+    "* #{item} \n"
+end
+end
+
+
+#defining method for adding new grocery items
+grocery_list = ["carrots", "toilet paper", "apples", "salmon"]
+def add_item(grocery_list,item)
+  grocery_list << item
+end
+
+# total no of items
+puts grocery_list.length
+
+#checking is banana in the list
+  if grocery_list.include?("banana")
+    puts "You  to pick up bananas"
+  else
+    puts "You need to pick up bananas"
+  end
+
+#displaying 2nd item in grocery_list
+puts grocery_list[1]
+
+#sort the list and output with *
+puts grocery_list.sort
+puts arr_grocery(grocery_list.sort)
+
+#delete salmon from list and display
+grocery_list.delete("salmon")
+puts grocery_list
