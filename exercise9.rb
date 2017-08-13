@@ -36,4 +36,10 @@ students.each do |_cohort, student|
 end
 
 
-puts display(students)
+staff = { :cohort1 => 15, :cohort2 => 20 , :cohort3 => 25}
+def cohort_data(students)
+  students.each do |name, num|
+    puts "#{name}:  #{num} staffs"
+  end
+end
+puts cohort_data(staff)
