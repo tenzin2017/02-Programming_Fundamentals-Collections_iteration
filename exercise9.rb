@@ -4,8 +4,8 @@ puts students
 
 #method to display cohort with corresponding no. of students
 def cohort_data(students)
-  students.each do |name, num|
-    puts "#{name}:  #{num} students"
+  students.each do |cohort, num|
+    puts "#{cohort}:  #{num}  students"
   end
 end
 
@@ -21,7 +21,7 @@ puts students.keys
 #class size increaed by 5%
 students_increased_five_percent= {}
 students.map do |_cohort, student|
-     students_increased_five_percent[_cohort] = student + 0.05* student
+     students_increased_five_percent[_cohort]= student + 0.05* student
 end
 puts students_increased_five_percent
 
